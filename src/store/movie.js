@@ -24,7 +24,7 @@ export default ({
     }
   },
   actions: {
-    function fetchMovies({ state, commit }, pageNum) {
+    async fetchMovies({ state, commit }, pageNum) {
       const promise = new Promise(resolve => {
         const res = axios.get(`http://www.omdbapi.com/?apikey=4e19f157&s=${state.title}&page=${pageNum}`) 
         resolve(res)
